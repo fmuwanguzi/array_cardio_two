@@ -53,9 +53,23 @@ const people = [
   console.log(comment)
 
   // Array.prototype.findIndex()
+  // Find the comment with this ID
   const index = comments.findIndex(comment => 
     comment.id === 823423);
-
     console.log(index)
-  // Find the comment with this ID
+
   // delete the comment with the ID of 823423
+
+    //use splice 
+    comments.splice(index,1)
+    
+    //use a spread and slice to create a new array 
+
+    const newComments = [
+        ...comments.slice(0, index),
+        ...comments.slice(index + 1)
+    ]
+
+    console.table(newComments)
+
+    
